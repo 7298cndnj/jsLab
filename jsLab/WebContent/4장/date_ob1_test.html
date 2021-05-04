@@ -5,9 +5,15 @@
 <title> 날짜 정보 객체 </title>
 <script type="text/javascript">
 //<![CDATA[
+	var t=new Date();//2021-05-04
+	var nowMonth=t.getMonth();//현재 월을 반환하며 1적게 나온다.4
+	var nowDate=t.getDate();//현재 일자를 반환한다.4
+	var nowDay=t.getDay(); //현재  요일을 반환한다. 화요일=2
 
-
-
+	var m=new Date("2002/5/31");
+	var theMonth=m.getMonth();//4
+	var theDate=m.getDate();//31
+	var theDay=m.getDay();//금요일=5
 
    document.write("현재 월:"+nowMonth,"<br />");
    document.write("현재 일:"+nowDate,"<br />");
