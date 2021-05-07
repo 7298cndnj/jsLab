@@ -7,19 +7,18 @@
 //<![CDATA[
 var i=0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//myFnc 함수를 정의한다
+function myFnc(){
+	i++;
+	document.write("hello"+i,"<br/ >");
+}
+	myFnc();//함수를 호충한다.
+	var theFnc=function(){ //익명 함수를 변수 theFnc에 참조 시킴.
+		   i++;
+		   document.write("bye"+i,"<br />");
+		}
+		  
+		theFnc(); //변수 theFnc에 참조된 함수를 호출
 //]]>
 </script>
 </head>

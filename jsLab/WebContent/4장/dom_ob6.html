@@ -81,7 +81,7 @@ document.f2.onsubmit=function(){
    if(act.checked==false){ //체크되어 있지 않으면 false
       alert("약관 동의해야 합니다!");
       act.focus();
-      return false;
+      return false;//submit로 form의 action에 정의된 script로 이동시키는 것을 막는다.
    }
 }
 //]]>
