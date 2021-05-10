@@ -20,26 +20,121 @@
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document)
+			.ready(
+					function() {
 
-		$("form").submit(function() {
-			var tel1_pattern = /(^01[016789]$)/; //정규식
+						$("form")
+								.submit(
+										function() {
+											var tel1_pattern = /(^01[016789]$)/; //정규식
+											var tel2_pattern=/^([0-9]{4})$/;
+											var tel3_pattern=/^([0-9]{4})$/;
+											var id = RegExp(/^[a-zA-Z0-9]{4,12}$/)
+											var pwd = RegExp(/^[a-zA-Z0-9]{4,12}$/)
+											var name = RegExp(/^[가-힣]+$/)
+											var email_pattern= RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/)
+											//아이디 공백확인
+											if ($("#id").val() == "") {
+												alert("아이디를 꼭 입력하세요!");
+												$("#id").focus();
+												return false;
+											}
+											//비밀번호 공백 확인
+											if ($("#pwd").val() == "") {
+												alert("패스워드 입력바랍니다");
+												$("#pwd").focus();
+												return false;
+											}
+											//비밀번호 유효성검사
+											if (!pwd.test($("#pwd").val())) {
+												alert("형식에 맞게 입력해주세요");
+												$("#pwd").val("");
+												$("#pwd").focus();
+												return false;
+											}
+											//비밀번호 확인란 공백 확인
+											if ($("#pwd2").val() == "") {
+												alert("비밀번호 확인란을 입력해주세요");
+												$("#pwd2").focus();
+												return false;
+											}
+											//비밀번호 서로확인
+											if ($("#pwd").val() != $("#pwd2")
+.val()) {
+												alert("비밀번호가 다릅니다");
+												$("#pwd").val("");
+												$("#pwd2").val("");
+												$("#pwd").focus();
+												return false;
+											}
+											//이름
+											if($("#name").val()==""){
+												alert("이름을 입력하세요");
+												$("#name").val("");
+												$("#name").focus();
+												return false;
+											}
+											//전화번호
+											if (tel1_pattern.test($("#tel1").val())==false) {
+												alert("전화번호를 입력 하세요");
+												$("#tel1").focus();
+												return false;
+											}
+											if($("#tel1").val()==""){
+												alert("전화번호를 입력 하세요");
+												$("#tel1").val("");
+												$("#tel1").focus();
+												return false;
+											}
+											if ($("#tel2").val().length != 4||"") {
+												$("#tel2").focus();
+												return false;	
+											}
+											if ($("#tel3").val().length != 4||"") {
+												$("#tel3").focus();
+												return false;	
+											}
+											//주소
+											if($("#addr").val()==""){
+												alert("주소를 입력하세요");
+												$("#addr").focus();
+												return false;
+												}
+										
+											//성별
+											if(!($("input:radio[name='gender']").is(":checked"))){
+												alert("성별을 선택해주세요");
+												return false;
+											}
+											//직업
+											if($("#jop option:selected").val()==""){
+												alert("직업을 선택해주세요");
+												return false;
+											}
+											//이메일
+											if(!(email_pattern.test($("#email").val()))){
+												alert("이메일을 입력하세요");
+												$("#email").val()
+												$("#email").focus();
+												return false;
+											}
+											if($("#email").val()==""){
+												alert("이메일을 입력하세요");
+												$("#email").val()
+												$("#email").focus();
+												return false;
+											}
+											//자기소개
+											if ($("#intro").val() == "") {
+												alert("자기소개를 입력해주세요");
+												$("#intro").focus();
+												return false;
+											}
 
-			if ($("#id").val() == "") {
-				alert("아이디를 꼭 입력하세요!");
-				$("#id").focus();
-				return false;
-			}
-			
-			
-			
-			
-			
-			
+										}); // submit() end
 
-		}); // submit() end
-
-	}); // ready() end
+					}); // ready() end
 </script>
 </head>
 
