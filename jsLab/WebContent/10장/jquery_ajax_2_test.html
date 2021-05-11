@@ -7,7 +7,20 @@
 <script type="text/javascript">
 //<![CDATA[
 $(function(){
- 
+ 	$("#member").on("submit",function(){
+ 		var d=$(this).serialize();//폼 요소에 전송할 데이터를 재가공한다.
+ 		alert(d);
+ 		
+ 		$.ajax({
+ 			url:"welcome.jsp",
+ 			type:"post",
+ 			data:d,
+ 			success:function(result){
+ 				$("#txt1").html(result);
+ 			}
+ 		});
+ 		return false;
+ 	});
  
  
  
@@ -26,7 +39,7 @@ $(function(){
 </script>
 </head>
 <body>
-	<form action="member.jsp" method="post" name="member" id="member">
+<form	name="member" id="member">
 		<fieldset>
 			<legend>회원가입</legend>
 			<p>
