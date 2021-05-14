@@ -101,3 +101,23 @@ p {
 .example_btn {
 	margin-bottom:10px;
 }
+    /* Swipe 2 required styles */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > li {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/* END required styles */
+#mySwipe img{width:100%; max-width:100%;}
+  
